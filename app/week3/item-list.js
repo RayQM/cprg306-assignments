@@ -89,7 +89,7 @@ export default function ItemList() {
   ];
 
   const item = ItemList.map((item) => (
-    <ul className="px-4 py-4 m-4 m-8 bg-slate-800 text-center ">
+    <ul className="px-4 py-4 m-4 m-4 bg-slate-800 text-center ">
       <il>
         <h1>{item.name}</h1>
       </il>
