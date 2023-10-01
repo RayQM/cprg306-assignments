@@ -1,5 +1,5 @@
 import Item from "./item";
-import React from "react";
+
 export default function ItemList() {
   const item1 = {
     name: "milk, 4 L 🥛",
@@ -88,7 +88,7 @@ export default function ItemList() {
     item12,
   ];
 
-  const item = ItemList.map((item) => (
+  /* const item = ItemList.map((item) => (
     <ul className="px-4 py-4 m-4 m-4 bg-slate-800 text-center ">
       <il>
         <h1>{item.name}</h1>
@@ -99,5 +99,13 @@ export default function ItemList() {
     </ul>
   ));
 
-  return item;
+  return item; */
+  return(
+    
+  <div className="p-3">
+      {ItemList.map((item) => (
+        <Item item={item} />
+      ))}
+    </div>
+  )
 }
