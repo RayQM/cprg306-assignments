@@ -19,6 +19,7 @@ export function NewItem(){
         setCategory("Produce")
     }
     const categories = [
+        "option",
         "Produce",
         "Dairy",
         "Bakery",
