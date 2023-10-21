@@ -30,7 +30,7 @@ export default function ItemList({ItemList}){
       </div>
       <div>
           {ItemList.map(item => (
-        <Item item={item} />
+        <Item  key={item.id}  item={item} />
           ))}
           </div>
     </div>
