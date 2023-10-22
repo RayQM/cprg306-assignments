@@ -4,15 +4,15 @@ import { useState } from "react"
 import Item from "./item"
 
 
-export default function ItemList({ItemList}){
-  const [sortBy , setSortBy] = useState('name')
+export default function ItemList({Items}){
+  const [sortBy , setSortBy] = useState('name');
   
- ItemList.sort((a,b)=>{
+ Items.sort((a,b)=>{
   if (sortBy === 'name'){
-    return a.name.localeCompare(b.name)
+    return a.name.localeCompare(b.name);
   }
   else if(sortBy === 'category'){
-    return a.category.localeCompare(b.category)
+    return a.category.localeCompare(b.category);
   }
  })
 
@@ -29,7 +29,7 @@ export default function ItemList({ItemList}){
         className={sortBy =="category" ?" bg-red-600 pl-2 pr-2 rounded-md ":" bg-blue-500 pl-2 pr-2 rounded-md"}>Category</button>
       </div>
       <div>
-          {ItemList.map(item => (
+          {Items.map(item => (
         <Item  key={item.id}  item={item} />
           ))}
           </div>

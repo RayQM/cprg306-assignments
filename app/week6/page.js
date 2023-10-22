@@ -10,13 +10,13 @@ export default function Page(){
     //Create an event handler function 
     function handleAddItem(newItem){
         console.log(newItem);
-        setItems((currentItems)=>[...currentItems,newItem])
+        setItems((currentItems) => [...currentItems, newItem]);
     }
     return(
         <main>
             <h1>Shopping list</h1>
             <NewItem onAddItem={handleAddItem}/>
-            <ItemList ItemList={items}/>
+            <ItemList Items={items}/>
         </main>
     )
 }
