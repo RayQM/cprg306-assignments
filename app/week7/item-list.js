@@ -4,7 +4,7 @@ import { useState } from "react"
 import Item from "./item"
 
 
-export default function ItemList({Items}){
+export default function ItemList({Items,onItemSelect}){
   const [sortBy , setSortBy] = useState('name');
   
  Items.sort((a,b)=>{
@@ -29,12 +29,8 @@ export default function ItemList({Items}){
         className={sortBy =="category" ?" bg-red-600 pl-2 pr-2 rounded-md ":" bg-blue-500 pl-2 pr-2 rounded-md"}>Category</button>
       </div>
       <div>
-          {Items.map(item => (
-        <Item  onSelect={() => onItemSelect(item)}
-        key={item.id}
-          name={item.name}
-          category={item.category}
-          quantity={item.quantity} />
+          {Items.map((item) => (
+        <Item onSelect={() => onItemSelect(item)} key={item.id}  item={item} />
           ))}
           </div>
     </div>
