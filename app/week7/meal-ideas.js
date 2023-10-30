@@ -28,13 +28,13 @@ return (
             <div>
             <h2>Meal Ideas</h2>
             <p>Here are some meal ideas using {ingredient.strMeal}</p>
-            <ul>
+            <div>
                 {meals.map(meal => (
-                    <li key={meal.idMeal} >
-                        <h2>{meal.strMeal}</h2>
-                    </li>
+                 
+                        <h2 key={meal.idMeal}>{meal.strMeal}</h2>
+                   
                 ))}
-            </ul>
+            </div>
         </div>
         </section>
         
