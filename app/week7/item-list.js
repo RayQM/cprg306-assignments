@@ -30,7 +30,7 @@ export default function ItemList({Items,onItemSelect}){
       </div>
       <div>
           {Items.map((item) => (
-        <Item onSelect={() => onItemSelect(item)} key={item.id}  item={item} />
+        <Item onSelect={onItemSelect} key={item.id}  item={item} />
           ))}
           </div>
     </div>

@@ -15,7 +15,7 @@ export default function Page(){
         setItems((currentItems) => [...currentItems, newItem]);
     }
     function handleItemSelect(ingredient){
-        let cleanedStr = ingredient.name;
+        let cleanedStr = ingredient.replace(/[^a-z\s]+$/i, ' ').trim().split(',')[0].replace(' ', '_');
         setSelectedItemName(cleanedStr); 
     }
     return(

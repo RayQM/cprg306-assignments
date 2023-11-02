@@ -5,31 +5,31 @@ import {useState, useEffect} from 'react';
 async function fetchMealIdeas(ingredient){
     try{
         const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`);
-        const meals = response.json();
-        return meals;
+        const data = await response.json();
+        return data.meals;
     }
     catch(error){
         console.log(error);
     }
 }
 
-export function MealIdeas(ingredient){
+export function MealIdeas({ingredient}){
     const [meals, setMeals] = useState([]);
 
     async function loadMealsIdeas(){
-        setMeals (await fetchMealIdeas(ingredient));
+        setMeals (await (await fetchMealIdeas(ingredient)));
     }
 
     useEffect(()=>{
-        loadMealsIdeas,[ingredient];
+        loadMealsIdeas(),[ingredient];
     })
 return (
         <section>
             <div>
             <h2>Meal Ideas</h2>
-            <p>Here are some meal ideas using {ingredient.strMeal}</p>
+            <p>Here are some meal ideas using {ingredient}</p>
             <div>
-                {meals.map(meal => (
+                {meals && meals.map(meal => (
                  
                         <h2 key={meal.idMeal}>{meal.strMeal}</h2>
                    
